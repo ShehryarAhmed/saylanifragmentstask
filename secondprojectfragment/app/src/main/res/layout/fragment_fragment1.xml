@@ -3,12 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f5f5"
-    tools:context="com.example.sayla.secondprojectfragment.Fragment1">
+    tools:context="com.example.sayla.secondprojectfragment.Fragment1"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- TODO: Update blank fragment layout --><!--
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="first Fragment" />
+        android:text="first Fragment" />-->
+<EditText
+    android:id="@+id/edittext"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="enter name"
+    />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="enter"
+        android:onClick="toast"
+        android:layout_gravity="center" />
 </FrameLayout>

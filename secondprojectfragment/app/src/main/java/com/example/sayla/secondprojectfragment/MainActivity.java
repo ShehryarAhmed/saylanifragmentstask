@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // Toast.makeText(MainActivity.this,"button1",Toast.LENGTH_SHORT).show();
               getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new Fragment1()).commit();
+
             }
         });
         Button button2 = (Button) findViewById(R.id.buttoon2);
@@ -36,5 +37,8 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new Fragment3()).commit();
             }
         });
+
     }
-}
+public void toast(String getfromedittex){
+    Toast.makeText(MainActivity.this,"Your Name :"+getfromedittex,Toast.LENGTH_SHORT).show();
+}}
