@@ -1,6 +1,7 @@
 package com.example.sayla.secondprojectfragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.sax.StartElementListener;
 import android.support.v4.app.Fragment;
@@ -23,7 +24,10 @@ public class Fragment1 extends Fragment {
         // Required empty public constructor
     }
 
-
+   public  interface  fragmentinterface{
+       void dosmomework(String msg);
+   }
+    private fragmentinterface callback;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,10 +39,16 @@ public class Fragment1 extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(),""+editText.getText(),Toast.LENGTH_SHORT).show();
+                callback.dosmomework(editText.getText().toString());
             }
         });
 
         return rootview;
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        callback = (fragmentinterface) context;
+    }
 }
